@@ -1,13 +1,17 @@
 import React from "react";
 import aboutimg from "./../assets/about.png";
 import Title from "./Title/Title";
+import playbtn from "./../assets/play-icon.png"
 
-const AboutUs = () => {
+const AboutUs = ({setPlayState}) => {
   return (
     <section>
 
         <div className="video-img">
           <img src={aboutimg} alt="aboutimg" />
+          <div className="playbtn">
+            <img src={playbtn} alt="" onClick={()=>{setPlayState(true)}}  />
+            </div>
         </div>
         <div className="about-us_content">
           <h3>about university</h3>

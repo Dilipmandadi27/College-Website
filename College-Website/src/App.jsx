@@ -9,8 +9,14 @@ import Campus from './Components/Campus'
 import Testimonials from './Components/Testimonials'
 import ContactUs from './Components/ContactUs'
 import Footer from './Components/Footer'
+import Videoplayer from './Components/Videoplayer'
+import { useState } from 'react'
+import Notify from './Components/Notify'
 
 const App = () => {
+
+  const[playstate, setPlayState] = useState(false)
+
   return (
     <div>
       <Navbar/>
@@ -20,7 +26,7 @@ const App = () => {
         <Title subTitle="What We Offer" title = "OUR PROGRAM"/>
         <Programs/>
 
-        <AboutUs/>
+        <AboutUs setPlayState={setPlayState}/>
 
         <Title subTitle="Campus Photos" title = "GALLERY" />
         <Campus/>
@@ -34,6 +40,7 @@ const App = () => {
         <Footer/>
 
       </div>
+      <Videoplayer playstate={playstate} setPlayState={setPlayState}/>
     </div>
   )
 }
